@@ -129,6 +129,7 @@
         <members>StreamActivityAccess</members>
         <members>StreamingChannel</members>
         <members>Task</members>
+        <members>TestObject__c</members>
         <members>Topic</members>
         <members>TopicAssignment</members>
         <members>User</members>
@@ -137,6 +138,7 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>TestObject__c-en_US</members>
         <members>myobj__c-en_US</members>
         <name>CustomObjectTranslation</name>
     </types>
@@ -224,6 +226,7 @@
         <members>SocialPost-Social Post Layout</members>
         <members>Solution-Solution Layout</members>
         <members>Task-Task Layout</members>
+        <members>TestObject__c-TestObject Layout</members>
         <members>User-User Layout</members>
         <members>UserProvAccount-User Provisioning Account Layout</members>
         <members>UserProvisioningLog-User Provisioning Log Layout</members>
@@ -458,6 +461,7 @@
         <members>Order</members>
         <members>Solution</members>
         <members>Task</members>
+        <members>TestObject__c</members>
         <members>myobj__c</members>
         <name>TopicsForObjects</name>
     </types>
