@@ -18,6 +18,8 @@ cache:
 list_folder:
   stage: test
   script:
+    - cd sf-project
+    - force-dev-tool login development
     - ls -l
 #test_deploy_development:
  # stage: test
