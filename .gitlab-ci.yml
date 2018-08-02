@@ -4,34 +4,44 @@ stages:
 image: node:8.11.3
 before_script:
   - npm install --global force-dev-tool --silent &>/dev/null
+  - force-dev-tool remote add production vitaliy.paliy@ctdev.io 080494VpV https://login.salesforce.com
+  - mkdir -p sf-project && cd sf-project 
+  - force-dev-tool fetch --progress production
+  - force-dev-tool package -a production
+  - force-dev-tool retrieve production
 cache:
   paths:
     - /usr/local/lib/node_modules
+    - /sf-project
   untracked: true
 
-test_deploy_development:
+list_folder:
   stage: test
   script:
-    #- force-dev-tool deploy -ct development
+    - ls -l
+#test_deploy_development:
+ # stage: test
+  #script:
+   # - force-dev-tool deploy -ct development
 
-test_deploy_production:
-  stage: test
-  allow_failure: true
-  script:
-    #- force-dev-tool deploy -ct production
+#test_deploy_production:
+#  stage: test
+#  allow_failure: true
+#  script:
+#    - force-dev-tool deploy -ct production
 
-deploy_development:
-  stage: deploy
-  environment: development
-  only:
-    - develop
-  script:
-    #- force-dev-tool deploy development
+#deploy_development:
+#  stage: deploy
+#  environment: development
+#  only:
+#   - develop
+#  script:
+#    - force-dev-tool deploy development
 
-deploy_production:
-  stage: deploy
-  environment: production
-  when: manual
-  script:
-    # The -t makes sure we run tests
-    #- force-dev-tool deploy -t production
+#deploy_production:
+#  stage: deploy
+#  environment: production
+ # when: manual
+ # script:
+#    # The -t makes sure we run tests
+ #   - force-dev-tool deploy -t production
