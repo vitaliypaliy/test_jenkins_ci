@@ -1,0 +1,37 @@
+stages:
+  - test
+  - deploy
+image: node:8.11.3
+before_script:
+  - npm install --global force-dev-tool --silent &>/dev/null
+cache:
+  paths:
+    - /usr/local/lib/node_modules
+  untracked: true
+
+test_deploy_development:
+  stage: test
+  script:
+    #- force-dev-tool deploy -ct development
+
+test_deploy_production:
+  stage: test
+  allow_failure: true
+  script:
+    #- force-dev-tool deploy -ct production
+
+deploy_development:
+  stage: deploy
+  environment: development
+  only:
+    - develop
+  script:
+    #- force-dev-tool deploy development
+
+deploy_production:
+  stage: deploy
+  environment: production
+  when: manual
+  script:
+    # The -t makes sure we run tests
+    #- force-dev-tool deploy -t production
