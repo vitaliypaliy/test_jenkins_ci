@@ -21,6 +21,13 @@ list_folder:
     - cd /sf-project
     - force-dev-tool login production
     - ls -l
+    - git init
+    - git add . 
+    - git remote add origin https://gitlab.com/vitaliy.paliy/test.git
+    - git checkout -b deploy
+    - git add .
+    - git commit -m "deploy_commit"
+    - git diff --no-renames master deploy | force-dev-tool changeset create deploy
 #test_deploy_development:
  # stage: test
   #script:
