@@ -4,6 +4,7 @@ stages:
 image: node:8.11.3
 before_script:
   - npm install --global force-dev-tool --silent &>/dev/null
+  - node -v
   - mkdir -p /sf-project && cd /sf-project
   - force-dev-tool remote add production vitaliy.paliy@ctdev.io 080494VpV https://login.salesforce.com 
   - force-dev-tool fetch --progress production
