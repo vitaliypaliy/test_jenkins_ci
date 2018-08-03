@@ -32,8 +32,11 @@ list_folder:
     - git config --global user.password "080494VpV"
     - git fetch --all
     - git commit -m "deploy_commit"
-    - git diff --no-renames --name-only remotes/origin/master deploy
-    - git diff --no-renames remotes/origin/master deploy | force-dev-tool changeset create deploy
+    - git push orogin
+    - git checkout master
+    - git diff --no-renames --name-only master deploy
+    - git diff --no-renames master deploy | force-dev-tool changeset create deploy
+    - git push --delete deploy
 #test_deploy_development:
  # stage: test
   #script:
