@@ -19,7 +19,7 @@ list_folder:
   stage: test
   script:
     - cd /sf-project
-    - force-dev-tool login development
+    - force-dev-tool login production
     - ls -l
 #test_deploy_development:
  # stage: test
