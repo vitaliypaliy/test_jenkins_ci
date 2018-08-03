@@ -32,7 +32,7 @@ list_folder:
     - git config --global user.password "080494VpV"
     - git fetch --all
     - git commit -m "deploy_commit"
-    - git push orogin
+    - git push origin deploy
     - git checkout master
     - git diff --no-renames --name-only master deploy
     - git diff --no-renames master deploy | force-dev-tool changeset create deploy
