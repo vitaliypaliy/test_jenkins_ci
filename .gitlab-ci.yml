@@ -26,10 +26,6 @@ list_folder:
     - git remote add origin https://vitaliy.paliy:080494VpV@gitlab.com/vitaliy.paliy/test.git
     - git checkout -b deploy
     - git add .
-    - git config --global user.email "vitaliy.paliy@ctdev.io"
-    - git config --global user.name "Vitaliy Paliy"
-    - git config --global user.username "vitaliy.paliy"
-    - git config --global user.password "080494VpV"
     - git fetch --all
     - git commit -m "deploy_commit"
     - git push origin deploy
@@ -37,6 +33,9 @@ list_folder:
     - git diff --no-renames deploy master -- /sf-project/src/objects/TestObject__c.object
     - git diff --no-renames deploy master | force-dev-tool changeset create deploy
     - git push --delete origin deploy
+    - rm -rf src/*
+    - cp -a /sf-project/config/deployments/deploy/. /sf-project/src/
+    - force-dev-tool deploy -ct production
 #test_deploy_development:
  # stage: test
   #script:
