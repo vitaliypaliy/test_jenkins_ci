@@ -28,6 +28,7 @@ list_folder:
     - git add .
     - git config --global user.email "vitaliy.paliy@ctdev.io"
     - git config --global user.name "Vitaliy Paliy"
+    - git config --global user.username "vitaliy.paliy"
     - git config --global user.password "080494VpV"
     - git fetch --all
     - git commit -m "deploy_commit"
