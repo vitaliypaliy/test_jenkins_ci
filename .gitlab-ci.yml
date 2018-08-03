@@ -1,7 +1,7 @@
 stages:
   - test
   - deploy
-image: node:8.11.3-alpine
+image: node:8.11.3-jessie
 before_script:
   - node -v
   - npm install --global force-dev-tool --silent
