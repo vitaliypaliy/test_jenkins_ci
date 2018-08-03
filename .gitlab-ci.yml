@@ -37,6 +37,7 @@ list_folder:
     - git checkout master
     - git diff --no-renames deploy master -- /sf-project/src/objects/TestObject__c.object
     - git diff --no-renames deploy master | force-dev-tool changeset create deploy
+    - force-dev-tool changeset create test5 "src/objects/TestObject__c.object" -f
     - git push --delete origin deploy
     - rm -rf src/*
     - cp -a /sf-project/config/deployments/deploy/. /sf-project/src/
