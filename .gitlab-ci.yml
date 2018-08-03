@@ -34,7 +34,7 @@ list_folder:
     - git commit -m "deploy_commit"
     - git push origin deploy
     - git checkout master
-    - git diff --no-renames master deploy --/sf-project/src/objects/TestObject__c.object
+    - git diff --no-renames master deploy -- /sf-project/src/objects/TestObject__c.object
     - git diff --no-renames master deploy | force-dev-tool changeset create deploy
     - git push --delete origin deploy
 #test_deploy_development:
