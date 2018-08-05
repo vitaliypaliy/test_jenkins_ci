@@ -42,7 +42,7 @@ list_folder:
     - rm -rf src/*
     - cp -a /sf-project/config/deployments/deploy/. /sf-project/src/
     - force-dev-tool deploy -ct production
-    - force-dev-tool package
+    #- force-dev-tool package
     - force-dev-tool deploy production
 
 #test_deploy_development:
