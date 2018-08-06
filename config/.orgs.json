@@ -1,0 +1,11 @@
+{
+    "remotes": {
+        "production": {
+            "name": "production",
+            "default": false,
+            "username": "vitaliy.paliy@ctdev.io",
+            "password": "080494VpV",
+            "serverUrl": "https://login.salesforce.com"
+        }
+    }
+}
