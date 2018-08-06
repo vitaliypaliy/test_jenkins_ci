@@ -91,13 +91,13 @@
                 <leftValueReference>isChangedRule_2_myRule_1_LastModifiedDate</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>isObjectChanged</label>
+            <label>isObjectNotChanged</label>
         </rules>
     </decisions>
     <description>test process</description>
@@ -148,7 +148,7 @@
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>UpdateRecord</label>
+        <label>UpdateCurrentRecord</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <filters>
@@ -197,7 +197,7 @@
             </processMetadataValues>
             <field>Name</field>
             <value>
-                <stringValue>Updated</stringValue>
+                <stringValue>UpdatedObject</stringValue>
             </value>
         </inputAssignments>
         <object>TestObject__c</object>
