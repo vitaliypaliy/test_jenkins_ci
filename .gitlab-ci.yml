@@ -20,8 +20,6 @@ list_folder:
   stage: test
   script:
     - cd /sf-project
-    - force-dev-tool login production
-    - ls -l
     - git init
     - git add . 
     - git remote add origin https://vitaliy.paliy:080494VpV@gitlab.com/vitaliy.paliy/test.git
