@@ -36,8 +36,7 @@ list_folder:
     - git push origin deploy
     - git checkout master
     - git diff --no-renames --name-only master deploy | tr '\n' ' '
-    - #force-dev-tool changeset create deploy "$(git diff --no-renames --name-only master deploy | tr '\n' ' ')"
-    - git diff --no-renames master deploy | force-dev-tool changeset create deploy
+    - force-dev-tool changeset create deploy "$(git diff --no-renames --name-only master deploy | tr '\n' ' ')"
     - git push --delete origin deploy
     - rm -rf src/*
     - cp -a /sf-project/config/deployments/deploy/. /sf-project/src/
