@@ -34,7 +34,8 @@ list_folder:
     - git push origin deploy
     - git checkout master
     - git diff --no-renames --name-only master deploy | tr '\n' ' '
-    - force-dev-tool changeset create deploy "$(git diff --no-renames --name-only master deploy | tr '\n' ' ')"
+    - force-dev-tool changeset create deploy .gitlab-ci.yml config/.orgs.json config/production-fetch-result.json src/cleanDataServices/DataCloudGeoLocation.cleanDataService src/flowDefinitions/TestProcess.flowDefinition src/flows/TestProcess-3.flow
+    #- force-dev-tool changeset create deploy "$(git diff --no-renames --name-only master deploy | tr '\n' ' ')"
     - git push --delete origin deploy
     - rm -rf src/*
     - cp -a /sf-project/config/deployments/deploy/. /sf-project/src/
