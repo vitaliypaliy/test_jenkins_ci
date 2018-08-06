@@ -41,7 +41,10 @@ list_folder:
     - force-dev-tool deploy -ct production
     #- force-dev-tool package
     - force-dev-tool deploy production
-
+on_job_failure:
+  when: on_failure
+  script:
+    - git push --delete origin deploy
 #test_deploy_development:
  # stage: test
   #script:
