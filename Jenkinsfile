@@ -6,6 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh node -v
+                sh node -v
   				sh npm install --global force-dev-tool --silent
   				sh mkdir -p /sf-project && cd /sf-project
   				sh force-dev-tool remote add production vitaliy.paliy@ctdev.io 080494VpV https://login.salesforce.com 
