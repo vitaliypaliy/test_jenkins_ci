@@ -16,7 +16,7 @@ pipeline {
                 sh 'force-dev-tool retrieve production'
                 sh 'git init'
                 sh 'git add .' 
-                sh 'git remote add origin https://vitaliy.paliy:080494VpV@gitlab.com/vitaliy.paliy/test.git'
+                sh 'git remote add origin https://vitaliypaliy:080494VpV@github.com/vitaliypaliy/test_jenkins_ci.git'
                 sh 'git checkout -b deploy'
                 sh 'git add .'
                 sh 'git config --global user.email "vitaliy.paliy@ctdev.io"' 
@@ -25,20 +25,20 @@ pipeline {
                 sh 'git config --global user.password "080494VpV"' 
                 sh 'git fetch --all'
                 sh 'git commit -m "deploy_commit"'
-                sh 'git push origin deploy'
                 sh 'git checkout master'
                 sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
                 sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only master deploy | tr \'\\n\' \' \')'
-                sh 'rm -rf src/*'
-                sh 'cp -a config/deployments/deploy/. src/'
-                sh 'force-dev-tool deploy -ct production'
-                sh 'force-dev-tool deploy production'
+                sh 'force-dev-tool deploy -ct  -d config/deployments/deploy production'
+                sh 'force-dev-tool deploy -d config/deployments/deploy production'
             }
         }
     }
     post{
         always{
-            sh 'git push --delete origin deploy'
+            sh 'rm -rf .git'
+            sh 'rm -rf config'
+            sh 'rm -rf src'
+            sh 'rm -rf Jenkinsfile'
             deleteDir()
         }
     }
