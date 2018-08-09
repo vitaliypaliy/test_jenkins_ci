@@ -18,6 +18,8 @@ pipeline {
                 sh 'force-dev-tool retrieve production'
                 sh 'git add .'
                 sh 'git commit -m "deploy_commit"'
+                sh 'git config --global user.email "vitaliy.paliy@ctdev.io"' 
+                sh 'git config --global user.name "Vitaliy Paliy"'  
                 sh 'git checkout master'
                 sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
                 sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only master deploy | tr \'\\n\' \' \')'
