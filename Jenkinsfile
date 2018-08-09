@@ -12,7 +12,7 @@ pipeline {
                 sh 'npm install --global force-dev-tool --silent'
                 sh 'force-dev-tool remote add production vitaliy.paliy@ctdev.io 080494VpV https://login.salesforce.com' 
                 sh 'git checkout -b deploy'
-                sh 'rm -rf *'
+                sh 'rm -rf src/'
                 sh 'force-dev-tool fetch --progress production'
                 sh 'force-dev-tool package -a production'
                 sh 'force-dev-tool retrieve production'
