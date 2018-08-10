@@ -22,6 +22,8 @@ pipeline {
                 sh 'git commit -m "deploy_commit"'
                 sh 'git checkout master'
                 sh 'git merge deploy'
+                sh 'git commit -m "merge prod -> master"'
+                sh 'git push origin master'
                 sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
                 sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only master deploy | tr \'\\n\' \' \')'
                 sh 'force-dev-tool deploy -ct  -d config/deployments/deploy production'
