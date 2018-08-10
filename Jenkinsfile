@@ -21,6 +21,7 @@ pipeline {
                 sh 'git config --global user.name "Vitaliy Paliy"'  
                 sh 'git commit -m "deploy_commit"'
                 sh 'git checkout master'
+                sh 'git merge deploy'
                 sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
                 sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only master deploy | tr \'\\n\' \' \')'
                 sh 'force-dev-tool deploy -ct  -d config/deployments/deploy production'
