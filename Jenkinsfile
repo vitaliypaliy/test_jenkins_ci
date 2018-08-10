@@ -48,6 +48,7 @@ pipeline {
             sh 'rm -rf src'
             sh 'rm -rf Jenkinsfile'
             deleteDir()
+            
         }
     }
 }
