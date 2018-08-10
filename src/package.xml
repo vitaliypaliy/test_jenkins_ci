@@ -78,6 +78,7 @@
         <members>AccountCleanInfo</members>
         <members>AccountContactRole</members>
         <members>Activity</members>
+        <members>AnotherCustomObject__c</members>
         <members>Asset</members>
         <members>AssetRelationship</members>
         <members>AssistantProgress</members>
@@ -138,6 +139,7 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>AnotherCustomObject__c-en_US</members>
         <members>TestObject__c-en_US</members>
         <members>myobj__c-en_US</members>
         <name>CustomObjectTranslation</name>
@@ -175,7 +177,15 @@
     </types>
     <types>
         <members>TestProcess-1</members>
+        <members>TestProcess-10</members>
         <members>TestProcess-2</members>
+        <members>TestProcess-3</members>
+        <members>TestProcess-4</members>
+        <members>TestProcess-5</members>
+        <members>TestProcess-6</members>
+        <members>TestProcess-7</members>
+        <members>TestProcess-8</members>
+        <members>TestProcess-9</members>
         <name>Flow</name>
     </types>
     <types>
@@ -191,6 +201,7 @@
         <members>Account-Account %28Sales%29 Layout</members>
         <members>Account-Account %28Support%29 Layout</members>
         <members>Account-Account Layout</members>
+        <members>AnotherCustomObject__c-AnotherCustomObject Layout</members>
         <members>Asset-Asset Layout</members>
         <members>AssetRelationship-Asset Relationship Layout</members>
         <members>Campaign-Campaign Layout</members>
@@ -458,6 +469,7 @@
     </types>
     <types>
         <members>Account</members>
+        <members>AnotherCustomObject__c</members>
         <members>Asset</members>
         <members>Campaign</members>
         <members>Case</members>
