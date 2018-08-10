@@ -23,8 +23,7 @@ pipeline {
                 sh 'git checkout master'
                 sh 'git merge deploy'
                 withCredentials([usernamePassword(credentialsId: '7c84d7d6-f409-4ab3-9a5d-001e6d3d0606', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                    sh 'git remote add origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/test_jenkins_ci.git'
-                    sh('git push origin master https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/test_jenkins_ci.git')
+                    sh 'git push origin master'
                 }
                 sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
                 sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only master deploy | tr \'\\n\' \' \')'
