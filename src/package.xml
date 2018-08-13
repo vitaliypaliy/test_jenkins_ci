@@ -71,6 +71,7 @@
         <members>Opportunity.MainCompetitors__c</members>
         <members>Opportunity.OrderNumber__c</members>
         <members>Opportunity.TrackingNumber__c</members>
+        <members>TestObject__c.TestObject_Field__c</members>
         <name>CustomField</name>
     </types>
     <types>
