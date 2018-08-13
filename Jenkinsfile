@@ -23,7 +23,7 @@ pipeline {
                 sh 'git config --global user.name "Vitaliy Paliy"'  
                 sh 'git commit -m "deploy_commit"'
                 sh 'git checkout master'
-                sh 'git merge deploy'
+                sh 'git merge -s recursive -X ours deploy'
             }
         }
         stage('Running tests & dry-run deploy'){
