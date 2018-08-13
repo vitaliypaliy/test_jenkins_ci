@@ -10,7 +10,9 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'npm install --global force-dev-tool --silent'
-                sh 'force-dev-tool remote add production vitaliy.paliy@ctdev.io 080494VpV https://login.salesforce.com' 
+                withCredentials([usernamePassword(credentialsId: 'SFCredantials', passwordVariable: 'SF_PASSWORD', usernameVariable: 'SF_USERNAME')]) {
+                    sh 'force-dev-tool remote add production ${SF_USERNAME} ${SF_PASSWORD} https://login.salesforce.com' 
+                }
                 sh 'git checkout -b deploy'
                 sh 'rm -rf src/'
                 sh 'force-dev-tool fetch --progress production'
@@ -48,7 +50,7 @@ pipeline {
             sh 'rm -rf src'
             sh 'rm -rf Jenkinsfile'
             deleteDir()
-            
+
         }
     }
 }
