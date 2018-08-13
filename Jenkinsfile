@@ -49,6 +49,7 @@ pipeline {
             sh 'rm -rf config'
             sh 'rm -rf src'
             sh 'rm -rf Jenkinsfile'
+            sh 'rm -rf Jenkinsfile_scheduled'
             deleteDir()
 
         }
