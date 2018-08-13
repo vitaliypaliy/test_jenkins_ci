@@ -52,6 +52,22 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>TestObject_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>TestObject Field</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+     <fields>
+        <fullName>AnotherTestObject_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>AnotherTestObject Field</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
     <label>TestObject</label>
     <nameField>
         <label>TestObject Name</label>
