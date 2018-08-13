@@ -24,7 +24,7 @@ pipeline {
                 sh 'git commit -m "deploy_commit"'
                 sh 'git checkout -b org deploy'
                 sh 'git checkout deploy'
-                sh 'git merge master'
+                sh 'git merge origin/master'
             }
         }
         stage('Running tests & dry-run deploy'){
