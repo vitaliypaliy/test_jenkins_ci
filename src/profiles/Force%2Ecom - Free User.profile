@@ -1347,6 +1347,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>TestObject__c.AnotherTestObject_Field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>TestObject__c.TestObject_Field__c</field>
         <readable>true</readable>

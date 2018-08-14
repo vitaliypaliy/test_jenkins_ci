@@ -53,14 +53,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>TestObject_Field__c</fullName>
-        <externalId>false</externalId>
-        <label>TestObject Field</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
-    </fields>
-     <fields>
         <fullName>AnotherTestObject_Field__c</fullName>
         <externalId>false</externalId>
         <label>AnotherTestObject Field</label>
@@ -69,9 +61,9 @@
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>AnotherATestObject_Field__c</fullName>
+        <fullName>TestObject_Field__c</fullName>
         <externalId>false</externalId>
-        <label>AnotherATestObject Field</label>
+        <label>TestObject Field</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>

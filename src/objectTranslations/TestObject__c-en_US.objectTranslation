@@ -9,6 +9,10 @@
         <value>TestObjects3</value>
     </caseValues>
     <fields>
+        <label><!-- AnotherTestObject Field --></label>
+        <name>AnotherTestObject_Field__c</name>
+    </fields>
+    <fields>
         <label><!-- TestObject Field --></label>
         <name>TestObject_Field__c</name>
     </fields>
