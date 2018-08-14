@@ -13,19 +13,10 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'SFCredantials', passwordVariable: 'SF_PASSWORD', usernameVariable: 'SF_USERNAME')]) {
                     sh 'force-dev-tool remote add production ${SF_USERNAME} ${SF_PASSWORD} https://login.salesforce.com' 
                 }
-                sh 'git checkout -b deploy'
-                sh 'rm -rf src/'
-                sh 'force-dev-tool fetch --progress production'
-                sh 'force-dev-tool package -a production'
-                sh 'force-dev-tool retrieve production'
-                sh 'git add .'
+                sh 'git checkout deploy'
                 sh 'git config --global user.email "vitaliy.paliy@ctdev.io"' 
                 sh 'git config --global user.name "Vitaliy Paliy"'  
-                sh 'git commit -m "deploy_commit"'
-                sh 'git checkout -b org deploy'
-                sh 'git checkout master'
                 sh 'git checkout deploy'
-                sh 'git diff --no-renames --name-only deploy master'
                 sh 'git merge master'
             }
         }
@@ -35,7 +26,7 @@ pipeline {
                     sh 'git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/test_jenkins_ci.git'
                     sh 'git push origin master'
                 }
-                sh 'git diff --no-renames --name-only org deploy | tr \'\\n\' \' \''
+                sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
                 sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only org deploy | tr \'\\n\' \' \')'
                 sh 'force-dev-tool deploy -ct  -d config/deployments/deploy production'
             }
