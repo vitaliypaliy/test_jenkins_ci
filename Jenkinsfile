@@ -26,7 +26,7 @@ pipeline {
                 sh 'git checkout master'
                 sh 'git checkout deploy'
                 sh 'git diff --no-renames --name-only deploy master'
-                sh 'git merge master deploy'
+                sh 'git merge master'
             }
         }
         stage('Running tests & dry-run deploy'){
