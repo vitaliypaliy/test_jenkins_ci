@@ -16,6 +16,7 @@ pipeline {
                 sh 'git checkout deploy'
                 sh 'git config --global user.email "vitaliy.paliy@ctdev.io"' 
                 sh 'git config --global user.name "Vitaliy Paliy"'  
+                sh 'git checkout master'
                 sh 'git checkout deploy'
                 sh 'git merge master'
             }
