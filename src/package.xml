@@ -176,7 +176,6 @@
     <types>
         <members>LightningSalesConsole_UtilityBar</members>
         <members>LightningService_UtilityBar</members>
-        <members>account</members>
         <name>FlexiPage</name>
     </types>
     <types>
