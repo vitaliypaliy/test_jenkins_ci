@@ -34,8 +34,8 @@ pipeline {
                     sh 'git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/test_jenkins_ci.git'
                     sh 'git push origin master'
                 }
-                sh 'git diff --no-renames --name-only org master | tr \'\\n\' \' \''
-                sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only org master | tr \'\\n\' \' \')'
+                sh 'git diff --no-renames --name-only org deploy | tr \'\\n\' \' \''
+                sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only org deploy | tr \'\\n\' \' \')'
                 sh 'force-dev-tool deploy -ct  -d config/deployments/deploy production'
             }
         }
