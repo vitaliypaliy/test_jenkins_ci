@@ -23,7 +23,7 @@ pipeline {
                 sh 'git config --global user.name "Vitaliy Paliy"'  
                 sh 'git commit -m "deploy_commit"'
                 sh 'git checkout -b org deploy'
-                sh 'git diff --no-renames --name-only deploy master | tr \'\\n\' \' \''
+                sh 'git diff --no-renames --name-only deploy origin/master | tr \'\\n\' \' \''
                 sh 'git checkout deploy'
                 sh 'git merge origin/master'
                 sh 'git checkout master'
