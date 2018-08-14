@@ -28,7 +28,7 @@ pipeline {
                     sh 'git push origin master'
                 }
                 sh 'git diff --no-renames --name-only master deploy | tr \'\\n\' \' \''
-                sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only org deploy | tr \'\\n\' \' \')'
+                sh 'force-dev-tool changeset create deploy $(git diff --no-renames --name-only master deploy | tr \'\\n\' \' \')'
                 sh 'force-dev-tool deploy -ct  -d config/deployments/deploy production'
             }
         }
