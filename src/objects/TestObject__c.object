@@ -69,9 +69,9 @@
         <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>AnotherTestObject_Field1__c</fullName>
+        <fullName>AnotherATestObject_Field__c</fullName>
         <externalId>false</externalId>
-        <label>AnotherTestObject Field</label>
+        <label>AnotherATestObject Field</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
