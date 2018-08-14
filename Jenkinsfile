@@ -25,6 +25,7 @@ pipeline {
                 sh 'git checkout -b org deploy'
                 sh 'git checkout master'
                 sh 'git checkout deploy'
+                sh 'git diff --no-renames --name-only deploy master'
                 sh 'git merge master deploy'
             }
         }
