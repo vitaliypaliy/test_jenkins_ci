@@ -13,9 +13,6 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'SFCredantials', passwordVariable: 'SF_PASSWORD', usernameVariable: 'SF_USERNAME')]) {
                     sh 'force-dev-tool remote add production ${SF_USERNAME} ${SF_PASSWORD} https://login.salesforce.com' 
                 }
-                withCredentials([usernamePassword(credentialsId: '7c84d7d6-f409-4ab3-9a5d-001e6d3d0606', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                    sh 'git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/test_jenkins_ci.git'
-                }
                 sh 'git checkout -b deploy'
                 sh 'rm -rf src/'
                 sh 'force-dev-tool fetch --progress production'
@@ -28,7 +25,7 @@ pipeline {
                 sh 'git checkout -b org deploy'
                 sh 'git checkout deploy'
                 sh 'cat src/objects/TestObject__c.object'
-                sh 'git merge origin/master'
+                sh 'git merge origin/master deploy'
                 sh 'cat src/objects/TestObject__c.object'
                 sh 'git checkout master'
                 sh 'cat src/objects/TestObject__c.object'
