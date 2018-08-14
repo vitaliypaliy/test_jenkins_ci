@@ -18,7 +18,6 @@ pipeline {
                 sh 'git config --global user.name "Vitaliy Paliy"'  
                 sh 'git checkout master'
                 sh 'git checkout deploy'
-                sh 'git merge master'
             }
         }
         stage('Running tests & dry-run deploy'){
