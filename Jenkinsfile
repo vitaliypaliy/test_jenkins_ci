@@ -26,6 +26,7 @@ pipeline {
                 sh 'git checkout deploy'
                 sh 'cat src/objects/TestObject__c.object'
                 sh 'git merge origin/master'
+                sh 'cat src/objects/TestObject__c.object'
                 sh 'git checkout master'
                 sh 'cat src/objects/TestObject__c.object'
             }
