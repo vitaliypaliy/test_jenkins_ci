@@ -26,7 +26,7 @@ pipeline {
                 sh 'git checkout deploy'
                 sh 'git checkout master'
                 sh 'git merge origin/master'
-                sg 'git checkout deploy'
+                sh 'git checkout deploy'
                 sh 'git merge master deploy'
             }
         }
