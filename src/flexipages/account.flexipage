@@ -46,7 +46,7 @@
         <name>leftsidebar</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>account</masterLabel>
+    <masterLabel>accountFlexiPage</masterLabel>
     <sobjectType>Account</sobjectType>
     <template>
         <name>flexipage:recordHomePinnedHeaderTemplateDesktop</name>
