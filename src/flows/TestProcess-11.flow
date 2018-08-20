@@ -97,7 +97,7 @@
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>isObjectOK</label>
+            <label>isObjectOKANDGOOD</label>
         </rules>
     </decisions>
     <description>test process</description>
