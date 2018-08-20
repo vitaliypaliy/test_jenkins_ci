@@ -81,7 +81,7 @@
         <label>TestObject Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>TestObjects3</pluralLabel>
+    <pluralLabel>TestObjectsPlural</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
